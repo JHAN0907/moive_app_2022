@@ -18,7 +18,6 @@ class App extends React.Component{
         }
       }
     }= await axios.get("https://yts.mx/api/v2/list_movies.json?sort_by=rating");
-    console.log(movies);
     this.setState({isLoading: false, movies});
   }
 
@@ -45,6 +44,7 @@ class App extends React.Component{
                   title = {movie.title} 
                   summary = {movie.summary} 
                   poster = {movie.medium_cover_image} 
+                  genres = {movie.genres}
                 />
               )
             })
